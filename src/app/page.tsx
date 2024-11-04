@@ -30,8 +30,14 @@ export default function Home() {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
             />
-            <button onClick={handleGetBalance}>Get Balance</button>
-            {balance && <p>Balance: {balance}</p>}
+            <div className="flex flex-col">
+                <div className="rounded-lg px-2 py-2 bg-slate-800 text-white w-24">
+                    <button onClick={handleGetBalance}>Get Balance</button>
+                </div>
+                <div>
+                    {balance && <p>Balance: {balance}</p>}
+                </div>
+            </div>
         </div>
     );
 }
