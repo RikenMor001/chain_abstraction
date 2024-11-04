@@ -1,20 +1,21 @@
+// blockchainFactory.ts
+import { Solana } from "./solana";
 import { Blockchain } from "./blockchain";
 import { Ethereum } from "./etherium";
-import { Solana } from "./solana";
 
+export type ChainType = "ethereum" | "solana";
 
-export enum ChainType{
-    Ethereum = 'ethereum',
-    Solana = 'solana'
+export function createBlockchain(chain: ChainType, rpcUrl: string): Blockchain {
+  switch (chain) {
+    case "ethereum":
+      return new Ethereum(rpcUrl);
+    case "solana":
+      return new Solana(rpcUrl);
+    default:
+      throw new Error("Unsupported chain type");
+  }
 }
 
-export function createBlockchain(chainType: ChainType, rpcUrl: string): Blockchain{
-    switch(chainType){
-        case ChainType.Ethereum:
-            return new Ethereum(rpcUrl);
-        case ChainType.Solana: 
-        return new Solana(rpcUrl);
-        default: 
-        throw new Error("Unsupported blockchain type")
-    }
-}
+
+
+
