@@ -14,7 +14,6 @@ export class Solana implements Blockchain {
       const balance = await this.connection.getBalance(publicKey);
       return (balance / 1e9).toFixed(4); 
     } catch (error) {
-      console.error("Error fetching Solana balance:", error);
       throw new Error("Error fetching Solana balance");
     }
   }
