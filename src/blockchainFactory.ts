@@ -15,7 +15,3 @@ export function createBlockchain(chain: ChainType, rpcUrl: string): Blockchain {
       throw new Error("Unsupported chain type");
   }
 }
-
-
-
-
