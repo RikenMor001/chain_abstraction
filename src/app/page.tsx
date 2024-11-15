@@ -35,7 +35,9 @@ export default function Home() {
                     <button onClick={handleGetBalance}>Get Balance</button>
                 </div>
                 <div>
-                    {balance && <p>Balance: {balance}</p>}
+                    {balance && <div>
+                        Balance: {balance}
+                    </div>}
                 </div>
             </div>
         </div>
