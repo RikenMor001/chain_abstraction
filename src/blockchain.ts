@@ -1,5 +1,4 @@
 
-export interface Blockchain {
-    getBalance(address: string): Promise<string>;
-  }
-  
+export interface Blockchain{
+  getBalance(address: string): Promise<string>
+}  
